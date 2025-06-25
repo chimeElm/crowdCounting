@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>人群计数</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/element.css">
+    <script type="text/javascript" src="/static/js/vue.js"></script>
+    <script type="text/javascript" src="/static/js/element.js"></script>
+</head>
+<body>
+<div id="app" style="height: 100%">
+    <el-row>
+        <el-col :span="10">
+            <div class="header">
+                <h1>视频人群计数系统</h1>
+            </div>
+        </el-col>
+        <el-col :span="10">
+            <div class="upload">
+                <el-upload
+                        drag
+                        action="/upload"
+                        :before-upload="prepare"
+                        :on-success="finish"
+                        :show-file-list="false">
+                    <i class="el-icon-upload"></i>
+                    <div class="el-upload__text">将视频文件拖到此处，或<em>点击上传</em></div>
+                </el-upload>
+            </div>
+        </el-col>
+    </el-row>
+    <el-row>
+        <el-table
+                :data="dataLs"
+                style="width: 100%"
+                height="600"
+                stripe
+                border>
+            <el-table-column
+                    prop="name"
+                    label="秒数"
+                    min-width="100"
+                    :resizable="false">
+            </el-table-column>
+            <el-table-column
+                    prop="img"
+                    label="原始画面"
+                    min-width="200"
+                    :resizable="false">
+                <template slot-scope="scope">
+                    <img :src="scope.row.img" alt="原始画面" height="150">
+                </template>
+            </el-table-column>
+            <el-table-column
+                    prop="res"
+                    label="密度图"
+                    min-width="200"
+                    :resizable="false">
+                <template slot-scope="scope">
+                    <img :src="scope.row.res" alt="密度图" height="150">
+                </template>
+            </el-table-column>
+            <el-table-column
+                    prop="count"
+                    label="估计人数"
+                    min-width="100"
+                    :resizable="false">
+            </el-table-column>
+        </el-table>
+    </el-row>
+</div>
+<script src="/static/js/index.js"></script>
+</body>
+</html>

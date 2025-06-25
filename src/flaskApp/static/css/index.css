@@ -1,0 +1,17 @@
+.header {
+    text-align: center;
+    margin: 70px 0 0 180px;
+}
+
+.header h1 {
+    font-size: 35px;
+    color: #333;
+}
+
+.upload {
+    margin: 12px 0 12px 200px;
+}
+
+.cell {
+    font-size: 17px;
+}

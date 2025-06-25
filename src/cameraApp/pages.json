@@ -1,0 +1,14 @@
+{
+	"pages": [{
+		"path": "pages/scan-frame/scan-frame",
+		"style": {
+			"navigationBarTitleText": "人群计数"
+		}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "人群计数",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
